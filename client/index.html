@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="loadingAni">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <div class="load-title">
+        <h1>MovieBox</h1> </div>
+    <!--    <div id="output" class="output"></div>-->
+    <div class="overlay"></div>
+    <div id="movie-section">
+        <div class="player">
+            <div id="close">x</div>
+            <video class='video-player viewer' id='videoPlayer'></video>
+            <div class="controls">
+                <div class="progress">
+                    <div class="progress-filled"></div>
+                </div>
+                <button class="player-button toggle" title="toggle play"><img src="play.png" alt="Play"></button>
+                <button data-skip="-10" class="player-button back"><img src="skip-b.png" alt="Skip 10s backwards"></button>
+                <button data-skip="30" class="player-button forward"><img src="skip-f.png" alt="Skip 30s forward"></button>
+            </div>
+        </div>
+        <div class="movie-background">
+            <h1 class="section-title">RANDOM PICKS FOR YOU</h1>
+            <div id="container"> </div>
+            <h1 class="section-title">ALL MOVIES</h1>
+            <div id="allContainer"> </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="genres">
+        <ul>
+            <li id="action">
+                <img src="icons/action.png" alt="">
+            </li>
+            <li id="adventure">
+                <img src="icons/adventure.png" alt="">
+            </li>
+            <li id="animation">
+                <img src="icons/animation.png" alt="">
+            </li>
+            <li id="comedy">
+                <img src="icons/comedy.png" alt="">
+            </li>
+            <li id="crime">
+                <img src="icons/crime.png" alt="">
+            </li>
+            <li id="documentary">
+                <img src="icons/documentary.png" alt="">
+            </li>
+            <li id="drama">
+                <img src="icons/drama.png" alt="">
+            </li>
+            <li id="family">
+                <img src="icons/family.png" alt="">
+            </li>
+            <li id="fantasy">
+                <img src="icons/fantasy.png" alt="">
+            </li>
+            <li id="history">
+                <img src="icons/history.png" alt="">
+            </li>
+            <li id="horror">
+                <img src="icons/horror.png" alt="">
+            </li>
+            <li id="music">
+                <img src="icons/music.png" alt="">
+            </li>
+            <li id="mystery">
+                <img src="icons/mystery.png" alt="">
+            </li>
+            <li id="romance">
+                <img src="icons/romance.png" alt="">
+            </li>
+            <li id="scifi">
+                <img src="icons/scifi.png" alt="">
+            </li>
+            <li id="tvmovie">
+                <img src="icons/tvmovie.png" alt="">
+            </li>
+            <li id="thriller">
+                <img src="icons/thriller.png" alt="">
+            </li>
+            <li id="war">
+                <img src="icons/war.png" alt="">
+            </li>
+            <li id="western">
+                <img src="icons/western.png" alt="">
+            </li>
+            <li id="clear">
+                <img src="icons/clear.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <script>
+        //Node connection happens here
+        var socket = io();
+        $(document).ready(function() {
+            socket.emit('press');
+            return false;
+        });
+
+    </script>
+</body>
+
+</html>
