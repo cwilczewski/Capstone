@@ -4,9 +4,10 @@
   "description": "",
   "main": "script.js",
   "dependencies": {
-    "glob": "^7.1.1",
-    "jsonfile": "^2.4.0",
-    "movie-info": "^1.0.2"
+    "express": "^4.14.0",
+    "get-json": "^2.0.0",
+    "limiter": "^1.1.0",
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
     "apache-server-configs": "^2.14.0"
